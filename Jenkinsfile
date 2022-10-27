@@ -4,7 +4,7 @@ pipeline {
         skipStagesAfterUnstable()
     }
         }
-        stage('Test'){
+        stage('ec2_slave'){
             steps {
                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 
