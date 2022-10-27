@@ -3,11 +3,6 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
-    stages {
-        stage('Build') { 
-            steps { 
-                git 'https://github.com/mahmoud254/jenkins_nodejs_example.git' 
-            }
         }
         stage('Test'){
             steps {
@@ -15,6 +10,7 @@ pipeline {
                 
                 sh 'docker login -u ${USERNAME} -p ${PASSWORD}'
                 sh 'docker push omarkorety/node-app-test:$BUILD_TAG'
+                }
                   
 
             }
