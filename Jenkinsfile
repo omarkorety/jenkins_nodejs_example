@@ -1,5 +1,5 @@
 pipeline { 
-    agent {label "slave1"} 
+    agent {label "docker_slave"} 
     options {
         skipStagesAfterUnstable()
     }
