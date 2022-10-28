@@ -8,7 +8,7 @@ ipeline {
         stage('Build') { 
             steps { 
 //                 sh 's docker build -t omarkorety/node-app-test:$BUILD_TAG .' 
-                echo "hello "
+                sh "ls "
             }
             post {
                 success {
