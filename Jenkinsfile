@@ -8,7 +8,7 @@ pipeline {
         stage('Build') { 
             steps { 
 //                 sh 's docker build -t omarkorety/node-app-test:$BUILD_TAG .' 
-                sh "hello "
+                echo "hello "
             }
             post {
                 success {
