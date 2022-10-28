@@ -1,4 +1,4 @@
-pipeline { 
+ipeline { 
     agent any 
     options {
         skipStagesAfterUnstable()
@@ -18,6 +18,9 @@ pipeline {
 
             }
         }
+    }
+}
+
       
 
 //         stage('docker_slave'){
@@ -33,4 +36,4 @@ pipeline {
 //         }
 
 //     }
- }
+//  }
