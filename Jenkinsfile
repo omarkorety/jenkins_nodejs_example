@@ -9,6 +9,12 @@ pipeline {
             steps { 
                 sh ' docker build -t omarkorety/node-app-test:$BUILD_TAG .' 
             }
+            post {
+                success {
+                    slackSend color: "good", message: "Message from Jenkins Pipeline"
+                }
+
+            }
         }
 
         stage('docker_slave'){
