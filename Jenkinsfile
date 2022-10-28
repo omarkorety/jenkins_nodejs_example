@@ -7,27 +7,28 @@ pipeline {
 
         stage('Build') { 
             steps { 
-                sh ' docker build -t omarkorety/node-app-test:$BUILD_TAG .' 
+//                 sh 's docker build -t omarkorety/node-app-test:$BUILD_TAG .' 
+                sh "hello "
             }
             post {
                 success {
-                    slackSend color: "good", message: "Message from Jenkins Pipeline"
+                    slackSend color: "good", message: "slack message is done "
                 }
 
             }
         }
 
-        stage('docker_slave'){
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+//         stage('docker_slave'){
+//             steps {
+//                 withCredentials([usernamePassword(credentialsId: 'docker-hub', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 
-                sh ' docker login -u ${USERNAME} -p ${PASSWORD}'
-                sh ' docker push omarkorety/node-app-test:$BUILD_TAG'
-                }
+//                 sh ' docker login -u ${USERNAME} -p ${PASSWORD}'
+//                 sh ' docker push omarkorety/node-app-test:$BUILD_TAG'
+//                 }
                   
 
-            }
-        }
+//             }
+//         }
 
-    }
-}
+//     }
+// }
