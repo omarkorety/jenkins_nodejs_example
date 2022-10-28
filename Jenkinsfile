@@ -13,10 +13,12 @@ pipeline {
             post {
                 success {
                     slackSend color: "good", message: "slack message is done "
+
                 }
 
             }
         }
+      
 
 //         stage('docker_slave'){
 //             steps {
@@ -31,4 +33,4 @@ pipeline {
 //         }
 
 //     }
-// }
+ }
